@@ -1,16 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience | K. Mishra</title>
   <link rel="stylesheet" href="experience.css" />
 </head>
 <body>
 
   <header class="header">
-    <a href="index.html">🔘</a>
-    <nav class="nav">
+    <a href="index.html" class="logo-btn">🔘</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav" id="mainNav">
       <a href="portfolio.html">Portfolio</a>
-      <a href="services.html">Services</a>
+      <a href="service.html">Services</a>
       <a href="experience.html" class="active">Experience</a>
       <a href="project.html">Projects</a>
     </nav>
@@ -67,5 +70,13 @@
     © 2025 K. Mishra — Frontend Developer
   </footer>
 
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+    });
+  </script>
 </body>
 </html>

@@ -16,35 +16,59 @@ body {
   line-height: 1.6;
 }
 
-/* ── HEADER & FOOTER ── */
-.header, .footer { padding: 32px 64px; }
-
+/* ── HEADER ── */
 .header {
+  padding: 28px 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-.logo { font-size: 18px; letter-spacing: 1px; }
+.logo-btn { font-size: 22px; text-decoration: none; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
 
 .nav a {
   margin-left: 32px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
   text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.3s;
 }
 
 .nav a.active, .nav a:hover { color: var(--text-main); }
 
 /* ── CONTAINER ── */
-.container { max-width: 1000px; margin: auto; padding: 80px 64px; }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 64px;
+}
 
 .page-title { max-width: 600px; margin-bottom: 64px; }
-.page-title h2 { font-size: 56px; font-weight: 400; margin-bottom: 16px; }
-.page-title p { color: var(--text-muted); font-size: 16px; }
+
+.page-title h2 {
+  font-size: 56px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  font-family: 'Georgia', serif;
+  letter-spacing: -0.03em;
+}
+
+.page-title p { color: var(--text-muted); font-size: 16px; line-height: 1.7; }
 
 /* ── PROJECTS LIST ── */
-.projects-list { display: grid; gap: 32px; }
+.projects-list { display: grid; gap: 28px; }
 
 .project {
   background: var(--bg-soft);
@@ -59,15 +83,22 @@ body {
   border-color: rgba(255,255,255,0.2);
 }
 
-.project h3 { font-size: 22px; margin-bottom: 12px; }
+.project h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-family: 'Georgia', serif;
+}
+
 .project p { color: var(--text-muted); margin-bottom: 16px; font-size: 15px; }
 
 .project ul { list-style: none; margin-bottom: 16px; }
+
 .project li {
   font-size: 14px;
   margin-bottom: 8px;
   padding-left: 16px;
   position: relative;
+  color: var(--text-muted);
 }
 
 .project li::before {
@@ -77,110 +108,58 @@ body {
   color: var(--accent);
 }
 
-.tech { font-size: 13px; color: var(--accent); }
+.tech { font-size: 13px; color: var(--accent); letter-spacing: 0.06em; }
 
+/* ── FOOTER ── */
 .footer {
+  padding: 40px 64px;
   border-top: 1px solid var(--border);
   font-size: 14px;
   color: var(--text-muted);
 }
 
-
-/* ════════════════════════════════════════
-   TABLET  (481px – 768px)
-════════════════════════════════════════ */
-@media (max-width: 768px) {
-
-  .header {
-    padding: 24px 40px;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .nav a {
-    margin-left: 20px;
-    font-size: 13px;
-  }
-
-  .container {
-    padding: 60px 40px;
-  }
-
-  .footer {
-    padding: 28px 40px;
-  }
-
-  .page-title h2 {
-    font-size: 42px;
-  }
-
-  .projects-list {
-    gap: 24px;
-  }
+/* ════════════════════════
+   TABLET  (≤ 900px)
+════════════════════════ */
+@media (max-width: 900px) {
+  .header { padding: 24px 40px; }
+  .container { padding: 60px 40px; }
+  .footer { padding: 28px 40px; }
+  .page-title h2 { font-size: 44px; }
+  .projects-list { gap: 20px; }
 }
 
-
-/* ════════════════════════════════════════
-   MOBILE  (≤ 480px)
-════════════════════════════════════════ */
-@media (max-width: 480px) {
-
+/* ════════════════════════
+   MOBILE  (≤ 540px)
+════════════════════════ */
+@media (max-width: 540px) {
   .header {
+    padding: 18px 20px;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .menu-toggle { display: block; }
+
+  .nav {
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 20px;
+    width: 100%;
+    padding: 14px 0 4px;
     gap: 14px;
   }
 
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 0;
-  }
+  .nav.open { display: flex; }
 
-  .nav a {
-    margin-left: 0;
-    margin-right: 16px;
-    font-size: 13px;
-  }
+  .nav a { margin-left: 0; font-size: 13px; }
 
-  .container {
-    padding: 40px 20px;
-  }
-
-  .footer {
-    padding: 24px 20px;
-  }
-
-  .page-title {
-    margin-bottom: 40px;
-  }
-
-  .page-title h2 {
-    font-size: 34px;
-  }
-
-  .page-title p {
-    font-size: 14px;
-  }
-
-  .projects-list {
-    gap: 16px;
-  }
-
-  .project {
-    padding: 24px 20px;
-  }
-
-  .project h3 {
-    font-size: 19px;
-  }
-
-  .project p {
-    font-size: 14px;
-  }
-
-  .tech {
-    font-size: 12px;
-  }
+  .container { padding: 40px 20px; }
+  .footer { padding: 24px 20px; }
+  .page-title { margin-bottom: 40px; }
+  .page-title h2 { font-size: 34px; }
+  .page-title p { font-size: 14px; }
+  .projects-list { gap: 14px; }
+  .project { padding: 24px 20px; }
+  .project h3 { font-size: 19px; }
+  .project p { font-size: 14px; }
 }
