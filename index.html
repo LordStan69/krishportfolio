@@ -1,5 +1,11 @@
-<html>
- <title>Portfolio – K. Mishra</title>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio – K. Mishra</title>
     <link rel="stylesheet" href="final.css">
 </head>
 <body>
@@ -15,20 +21,19 @@
 
             <div class="projects-with-menu">
                 <a href="project.html">Projects</a>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </nav>
 
         <a class="call-btn" href="tel:+9779824936750">Book A Call</a>
     </div>
-</header>
-<section id="projects-menu" class="projects-menu">
-</section>
 
+    <!-- Hamburger always visible, toggled via JS -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
 
 <section class="hero">
     <p class="role">Frontend Developer</p>
@@ -47,8 +52,8 @@
 
         <h1>Hello</h1>
         <p class="subtitle">
-            I'm Krish Mishra, a frontend developer crafting fast, accessible, 
-            and visually engaging web experiences using modern JavaScript, HTML, CSS, 
+            I'm Krish Mishra, a frontend developer crafting fast, accessible,
+            and visually engaging web experiences using modern JavaScript, HTML, CSS,
             and reusable UI components.
         </p>
 
@@ -56,38 +61,41 @@
             <a class="btn-primary" href="social.html">Social Profiles</a>
             <a class="btn-ghost" href="portfolio.html">View Portfolio</a>
         </div>
-
-        
     </div>
 
-    <div class="hero-right"> 
+    <div class="hero-right">
         <div class="portrait-frame">
             <img src="IMG_3339.jpeg" alt="Krish Mishra">
         </div>
     </div>
 </section>
 
-<section id="hamburger-menu" class="hamburger-menu">
+<!-- Side drawer menu -->
+<aside id="hamburger-menu" class="hamburger-menu">
+    <button class="menu-close" id="menu-close" aria-label="Close menu">&times;</button>
 
     <div class="menu-section">
         <ul>
+            <li><a href="portfolio.html"><h3>Portfolio</h3></a></li>
+            <li><a href="service.html"><h3>Services</h3></a></li>
+            <li><a href="experience.html"><h3>Experience</h3></a></li>
+            <li><a href="project.html"><h3>Projects</h3></a></li>
             <li><a href="about.html"><h3>About</h3></a></li>
-             <li><a href=""><h3>Skills & tools</h3></a></li>
-              <li><a href=""><h3>status</h3></a></li>
-               <li><a href=""><h3>Quick contact </h3></a></li>
-                <li><a href=""><h3>Social links</h3></a></li>
-                 <li>
-                        <a href="krish_CV.pdf" target="_blank" download>
-                        <h3>Download CV</h3>
-                        </a>
-                </li>
-
-
-        
+            <li><a href=""><h3>Skills &amp; Tools</h3></a></li>
+            <li><a href=""><h3>Status</h3></a></li>
+            <li><a href=""><h3>Quick Contact</h3></a></li>
+            <li><a href=""><h3>Social Links</h3></a></li>
+            <li>
+                <a href="krish_CV.pdf" target="_blank" download>
+                    <h3>Download CV</h3>
+                </a>
+            </li>
         </ul>
     </div>
+</aside>
 
-   
+<!-- Overlay backdrop -->
+<div class="menu-overlay" id="menu-overlay"></div>
 
 <script src="final.js"></script>
 </body>

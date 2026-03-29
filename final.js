@@ -1,19 +1,36 @@
+
+
 const hamburger = document.getElementById('hamburger');
-const hamburgerMenu = document.getElementById('hamburger-menu');
+const menu = document.getElementById('hamburger-menu');
+const overlay = document.getElementById('menu-overlay');
+const closeBtn = document.getElementById('menu-close');
 
-hamburger.addEventListener('click', (e) => {
-  e.stopPropagation();
-  hamburgerMenu.classList.toggle('open');
+function openMenu() {
+    menu.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+    if (menu.classList.contains('open')) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
 });
 
-hamburgerMenu.addEventListener('click', () => {
-  hamburgerMenu.classList.remove('open');
-});
+closeBtn.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
 
-document.addEventListener('click', (e) => {
-  if (!hamburgerMenu.classList.contains('open')) return;
-  const clickOnHamburger = hamburger.contains(e.target);
-  if (!clickOnHamburger) {
-    hamburgerMenu.classList.remove('open');
-  }
+// Close menu on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
 });
