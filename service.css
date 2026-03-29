@@ -20,6 +20,7 @@ body {
   line-height: 1.6;
 }
 
+/* ── HEADER ── */
 .header {
   padding: 32px 64px;
   display: flex;
@@ -45,6 +46,7 @@ body {
   color: var(--text-main);
 }
 
+/* ── CONTAINER ── */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -67,6 +69,7 @@ body {
   color: var(--text-muted);
 }
 
+/* ── SERVICES GRID ── */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -122,6 +125,7 @@ body {
   color: var(--accent);
 }
 
+/* ── FOOTER ── */
 .footer {
   padding: 48px 64px;
   border-top: 1px solid var(--border);
@@ -129,14 +133,100 @@ body {
   color: var(--text-muted);
 }
 
+
+/* ════════════════════════════════════════
+   TABLET  (481px – 768px)
+════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .header,
-  .container,
+
+  .header {
+    padding: 24px 40px;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .nav a {
+    margin-left: 20px;
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 60px 40px;
+  }
+
   .footer {
-    padding: 32px 24px;
+    padding: 36px 40px;
   }
 
   .page-title h2 {
-    font-size: 40px;
+    font-size: 42px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+}
+
+
+/* ════════════════════════════════════════
+   MOBILE  (≤ 480px)
+════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px;
+    gap: 14px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 16px;
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 40px 20px;
+  }
+
+  .footer {
+    padding: 28px 20px;
+  }
+
+  .page-title {
+    margin-bottom: 40px;
+  }
+
+  .page-title h2 {
+    font-size: 34px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 24px 20px;
+  }
+
+  .service-card h3 {
+    font-size: 19px;
+  }
+
+  .service-card p {
+    font-size: 14px;
   }
 }
